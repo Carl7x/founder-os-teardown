@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{PRODUCT_NAME}} · 产品拆解</title>
+<style>
+  :root { --ink:#1a1a1a; --muted:#6b6b6b; --line:#e6e6e6; --bg:#fff; --accent:#b98a2f; }
+  * { box-sizing:border-box; }
+  body { font-family:-apple-system,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+         color:var(--ink); background:var(--bg); line-height:1.8; font-size:16px;
+         max-width:780px; margin:0 auto; padding:32px 20px 64px; }
+  header.cover { border-bottom:2px solid var(--ink); padding-bottom:20px; margin-bottom:8px; }
+  header.cover h1 { font-size:26px; margin:0 0 8px; letter-spacing:.02em; }
+  header.cover .one-liner { font-size:17px; color:var(--muted); margin:0 0 12px; }
+  .meta { display:flex; flex-wrap:wrap; gap:8px 20px; font-size:13px; color:var(--muted); }
+  .meta b { color:var(--ink); font-weight:600; }
+  h2 { font-size:19px; margin:40px 0 12px; padding-top:4px; }
+  h2 .no { display:inline-block; min-width:30px; color:var(--accent); font-weight:700; margin-right:6px; }
+  .sec { margin-bottom:8px; }
+  .sec p { margin:10px 0; }
+  .sec ul { margin:10px 0; padding-left:22px; }
+  .sec li { margin:6px 0; }
+  table { border-collapse:collapse; width:100%; font-size:14px; margin:12px 0; }
+  th,td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:#f7f7f7; font-weight:600; white-space:nowrap; }
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; margin:16px 0; }
+  .gallery figure { margin:0; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .gallery img { width:100%; display:block; }
+  .gallery figcaption { font-size:12.5px; color:var(--muted); padding:8px 10px; line-height:1.6; }
+  .tag { display:inline-block; font-size:12px; border:1px solid var(--line); border-radius:20px;
+         padding:1px 10px; margin-right:6px; color:var(--muted); white-space:nowrap; }
+  .takeaway h3 { font-size:15px; margin:16px 0 6px; }
+  .verdict { border-left:3px solid var(--accent); padding:6px 16px; margin:20px 0;
+             font-size:17px; font-weight:600; }
+  blockquote { border-left:3px solid var(--line); margin:12px 0; padding:2px 14px; color:#444; font-size:14.5px; }
+  blockquote .src { display:block; font-size:12px; color:var(--muted); margin-top:4px; }
+  footer { margin-top:56px; padding-top:16px; border-top:1px solid var(--line);
+           font-size:12.5px; color:var(--muted); display:flex; justify-content:space-between; }
+  @media print {
+    body { max-width:100%; padding:0; font-size:13px; }
+    .gallery { grid-template-columns:repeat(3,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <h1>{{PRODUCT_NAME}}</h1>
+  <p class="one-liner">{{ONE_LINER}}</p>
+  <div class="meta">
+    <span>平台 <b>{{PLATFORM}}</b></span>
+    <span>定价 <b>{{PRICING}}</b></span>
+    <span>阶段 <b>{{STAGE}}</b></span>
+    <span>拆解日期 <b>{{TEARDOWN_DATE}}</b></span>
+  </div>
+</header>
+
+<h2><span class="no">00</span>实拍图</h2>
+<div class="gallery">
+  <figure><img src="{{SHOT_1_SRC}}" alt="截图1"><figcaption>{{SHOT_1_CAPTION}}</figcaption></figure>
+  <figure><img src="{{SHOT_2_SRC}}" alt="截图2"><figcaption>{{SHOT_2_CAPTION}}</figcaption></figure>
+  <figure><img src="{{SHOT_3_SRC}}" alt="截图3"><figcaption>{{SHOT_3_CAPTION}}</figcaption></figure>
+  <figure><img src="{{SHOT_4_SRC}}" alt="截图4"><figcaption>{{SHOT_4_CAPTION}}</figcaption></figure>
+  <figure><img src="{{SHOT_5_SRC}}" alt="截图5"><figcaption>{{SHOT_5_CAPTION}}</figcaption></figure>
+  <figure><img src="{{SHOT_6_SRC}}" alt="截图6"><figcaption>{{SHOT_6_CAPTION}}</figcaption></figure>
+</div>
+<p style="font-size:12.5px;color:var(--muted)">截图来源：{{SHOTS_SOURCE}}（用户实拍，非营销素材）</p>
+
+<h2><span class="no">01</span>产品快照</h2>
+<div class="sec">{{SEC_01}}</div>
+
+<h2><span class="no">02</span>用户 &amp; JTBD</h2>
+<div class="sec">{{SEC_02}}</div>
+
+<h2><span class="no">03</span>核心循环</h2>
+<div class="sec">{{SEC_03}}</div>
+
+<h2><span class="no">04</span>产品架构 &amp; 信息架构</h2>
+<div class="sec">{{SEC_04}}</div>
+
+<h2><span class="no">05</span>体验质量 &amp; 工艺信号</h2>
+<div class="sec">{{SEC_05}}</div>
+
+<h2><span class="no">06</span>商业模式 &amp; 变现</h2>
+<div class="sec">{{SEC_06}}</div>
+
+<h2><span class="no">07</span>增长 &amp; 留存钩子</h2>
+<div class="sec">{{SEC_07}}</div>
+
+<h2><span class="no">08</span>竞争定位</h2>
+<div class="sec">{{SEC_08}}</div>
+<table>
+  <tr><th>维度</th>{{COMPETITOR_HEADER}}</tr>
+  {{COMPETITOR_MATRIX_ROWS}}
+</table>
+
+<h2><span class="no">09</span>AI 就绪度</h2>
+<div class="sec">{{SEC_09}}</div>
+
+<h2><span class="no">10</span>北极星指标推断</h2>
+<div class="sec">{{SEC_10}}</div>
+
+<h2><span class="no">11</span>摩擦 &amp; 弱点</h2>
+<div class="sec">{{SEC_11}}</div>
+
+<h2><span class="no">12</span>用户原声</h2>
+<div class="sec">
+  <h3 style="font-size:15px">好评在夸什么</h3>
+  {{QUOTES_POSITIVE}}
+  <h3 style="font-size:15px;margin-top:18px">差评 Top 痛点</h3>
+  {{QUOTES_NEGATIVE}}
+  <p style="font-size:13px;color:var(--muted)">{{PAIN_SUMMARY}}</p>
+</div>
+
+<h2><span class="no">13</span>对我们的启示</h2>
+<div class="sec takeaway">
+  <h3>可借鉴</h3>
+  {{TAKEAWAYS_ADOPT}}
+  <h3>避雷</h3>
+  {{TAKEAWAYS_AVOID}}
+  <h3>待验证问题</h3>
+  {{TAKEAWAYS_QUESTIONS}}
+</div>
+
+<h2><span class="no">14</span>一句话终评</h2>
+<div class="verdict">{{VERDICT}}</div>
+
+<footer>
+  <span>Founder OS · Product Teardown</span>
+  <span>{{TEARDOWN_DATE}}</span>
+</footer>
+
+</body>
+</html>
